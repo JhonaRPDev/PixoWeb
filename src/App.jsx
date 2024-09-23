@@ -1,5 +1,5 @@
+import "./App.css"; // Asegúrate de que esté importado
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
 import Header from "./sections/Header";
 import Home from "./page/Home";
 import Company from "./page/Company";
@@ -13,13 +13,11 @@ function App() {
     <Router>
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="bg-black flex-grow">
+        <main className="bg-black flex-grow overflow-y-auto scrollable"> {/* Aquí se aplica la clase scrollable */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/company" element={<Company />} />
             <Route path="/services" element={<Services />}>
-              {/* <Route path="marketing" element={<Marketing />} />
-              <Route path="software" element={<SoftwareDevelopment />} /> */}
               <Route path="ai" element={<IAPixo />} />
             </Route>
           </Routes>

@@ -1,6 +1,6 @@
 const AboutCompany = () => {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-5 sm:px-10 lg:px-24 py-7 md:py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-5 sm:px-10 lg:px-24 py-7 md:py-12 mb-12">
         {/* Contenedor del texto */}
         <div className="flex flex-col justify-center">
           <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-center md:text-left">

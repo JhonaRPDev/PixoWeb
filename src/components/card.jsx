@@ -1,38 +1,39 @@
 import PropTypes from "prop-types";
 
-const Card = ({ image, title, description, hasImage, className = "" }) => {
+const Card = ({ image, title, description, className = "", isServices = false }) => {
   return (
-    <div className={`relative group overflow-hidden cursor-pointer ${className}`}>
-      {hasImage && (
-        <>
+    <div className={`relative bg-white shadow-md rounded-lg overflow-hidden cursor-pointer 
+                     ${className} 
+                     ${isServices ? 'group hover:scale-105 transition-transform duration-300' : ''}`}>
+      {/* Imagen de fondo */}
+      {image && (
+        <div className="absolute inset-0">
           <img
             src={image}
             alt={title || "Card image"}
-            className="w-full h-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105 opacity-80 group-hover:opacity-100"
+            className="w-full h-full object-cover"
           />
-          {/* Contenedor para el título y la descripción */}
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center p-4 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white transition-all duration-300 ease-in-out mb-2">
-              {title}
-            </h2>
-            {description && (
-              <p className="text-base sm:text-lg text-white opacity-90">
-                {description}
-              </p>
-            )}
-          </div>
-        </>
-      )}
-
-      {!hasImage && (
-        <div className={`bg-transparent rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out border-2 border-gray-700 flex items-center justify-center ${className}`}>
-          {description && (
-            <p className="text-white text-base text-center px-4">
-              {description}
-            </p>
-          )}
+          <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
         </div>
       )}
+
+      <div className={`relative p-1 sm:p-4 h-full flex flex-col 
+                       ${isServices ? 'justify-center items-center' : 'justify-between'}`}>
+        {/* Título */}
+        {title && (
+          <h2 className={`sm:text-xl font-bold text-white mb-2 
+                          ${isServices ? 'text-center group-hover:scale-110 transition-transform duration-300' : ''}`}>
+            {title}
+          </h2>
+        )}
+
+        {/* Descripción (solo para ServicesCompany) */}
+        {!isServices && description && (
+          <p className="text-white text-xs sm:text-base mt-auto">
+            {description}
+          </p>
+        )}
+      </div>
     </div>
   );
 };
@@ -41,12 +42,15 @@ Card.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
-  hasImage: PropTypes.bool,
   className: PropTypes.string,
+  isServices: PropTypes.bool,
 };
 
 Card.defaultProps = {
-  hasImage: true,
+  image: null,
+  title: null,
+  description: null,
+  isServices: false,
 };
 
 export default Card;

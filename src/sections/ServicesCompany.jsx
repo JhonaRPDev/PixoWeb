@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, Pagination, Navigation } from "swiper/modules"; // Importa los módulos directamente desde 'swiper/modules'
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const ServicesCompany = () => {
   const cards = [
@@ -20,40 +20,38 @@ const ServicesCompany = () => {
     {
       image: "/Desarrollo_software.jpg",
       title: "Desarrollo Software",
-      description: "Transforma tu presencia en línea",
+      description: "Soluciones tecnológicas a medida",
     },
     {
       image: "/Diseño_grafico.jpg",
-      title: "Diseño Grafico",
-      description: "Asesoramiento en salud con IA",
+      title: "Diseño Gráfico",
+      description: "Creaciones visuales impactantes",
     },
     {
       image: "/paginas_web.jpg",
-      title: "Pagina Web",
-      description: "Asesoramiento en salud con IA",
+      title: "Página Web",
+      description: "Tu negocio en el mundo digital",
     },
   ];
 
   return (
-    <div className="px-4 sm:px-6 lg:px-24 py-12">
-      {/* Título principal */}
-      <div className="text-start">
+    <div className="px-4 sm:px-6 lg:px-24 mb-12 sm:mb-24">
+      <div className="text-start mb-8">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">
           PIXO te ofrece lo mejor
         </h1>
-
-        {/* Subtítulo */}
-        <p className="text-lg text-white mb-8 max-w-3xl">
+        <p className="text-lg text-white max-w-3xl">
           Descubre cómo los servicios de Pixo IA pueden transformar tu negocio
           con soluciones personalizadas.
         </p>
       </div>
 
-      {/* Carrusel de imágenes */}
       <Swiper
-        modules={[Autoplay, Pagination, Navigation]} // Aquí incluimos los módulos
+        modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={30}
+        slidesPerView={3} // Valor predeterminado para pantallas grandes
         centeredSlides={true}
+        loop={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -66,13 +64,12 @@ const ServicesCompany = () => {
       >
         {cards.map((card, index) => (
           <SwiperSlide key={index}>
-            <div className="flex justify-center">
+            <div className="flex justify-center items-center h-full">
               <Card
                 image={card.image}
                 title={card.title}
                 description={card.description}
-                hasImage={true}
-                className="h-96 sm:h-80 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
+                className="h-64 md:h-[580px] md:w-96 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out transform scale-90 hover:scale-100"
               />
             </div>
           </SwiperSlide>

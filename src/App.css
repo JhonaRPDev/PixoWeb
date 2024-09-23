@@ -3,3 +3,22 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: black; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555; 
+  border-radius: 10px; 
+}
+
+/* Para Firefox */
+.scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #1a1a1a; 
+}

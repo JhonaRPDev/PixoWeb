@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import NavItem from "../components/NavItem";
+import NavItem from "../components/navItem";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -51,7 +51,7 @@ const Header = () => {
         <div className="hidden md:block">
           <Link
             to="/contact"
-            className="text-lg font-semibold text-white bg-transparent border-2 py-2 px-12 rounded-full hover:bg-blue-500 hover:border-0 transition-all duration-300 ease-in-out transform hover:translate-x-1"
+            className="font-semibold text-white bg-transparent border-2 py-1 px-12 rounded-full hover:bg-blue-500 hover:border-0 transition-all duration-300 ease-in-out transform hover:translate-x-1"
           >
             COTIZA AHORA
           </Link>

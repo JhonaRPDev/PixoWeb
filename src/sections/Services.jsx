@@ -10,14 +10,14 @@ const Services = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 mb-24">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
       {cards.map((card, index) => (
-        <div key={index} className={`${index === 0 ? card.span : ""} mb-4`}>
+        <div key={index} className={`${index === 0 ? 'col-span-full' : ''}`}>
           <Card
             image={card.image}
             title={card.title}
-            hasImage={true} // Sección Services siempre tiene imagen
-            className="h-64 sm:h-80 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out uppercase"
+            className="h-64 sm:h-80 shadow-md transition-all duration-300 ease-in-out uppercase"
+            isServices={true}
           />
         </div>
       ))}

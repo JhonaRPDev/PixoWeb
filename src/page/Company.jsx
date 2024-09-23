@@ -7,7 +7,7 @@ const Company = () => {
     <div>
       <HeroCompany />
       <AboutCompany />
-      <div className="flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-24">
+      <div className="flex flex-col items-center justify-center min-h-full mb-12 sm:mb-24 px-4 sm:px-6 lg:px-24">
         {/* Contenedor del título */}
         <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold text-center max-w-6xl mb-8">
           Con Pixo, puedes confiar en una inteligencia artificial segura y
