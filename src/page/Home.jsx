@@ -18,7 +18,14 @@ const images = [
 const Home = () => {
   return (
     <div>
-      <Hero />
+      <Hero
+        backgroundType="video"
+        backgroundSrc="/hero-bg.mp4"
+        title="Somos una Agencia de Publicidad Impulsada por IA"
+        paragraph="Combinamos creatividad y tecnología de vanguardia con nuestra propia inteligencia artificial, optimizando cada campaña y proyecto para maximizar tus resultados."
+        titleAlignment="left"
+        typed={true}
+      />
       <div className="px-5 sm:px-10 lg:px-24 mb-12">
         <h1 className="text-white text-2xl sm:text-3xl text-center mb-8 font-semibold">
           ¡La inteligencia del futuro, hoy a tu servicio!

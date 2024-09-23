@@ -7,12 +7,7 @@ const AboutCompany = () => {
             Conoce más de PIXO IA
           </h1>
           <p className="text-white text-base leading-relaxed text-center md:text-left">
-            Nuestra misión es empoderar a personas y empresas mediante soluciones
-            innovadoras de inteligencia artificial, diseñadas para optimizar sus
-            procesos, mejorar su bienestar y transformar la manera en que
-            interactúan con la tecnología. Ofrecemos asesoramiento personalizado y
-            herramientas avanzadas para que todos puedan aprovechar el potencial
-            de la IA de manera fácil y accesible.
+          Nuestra misión es empoderar a personas y empresas mediante soluciones innovadoras con inteligencia artificial, diseñadas para optimizar sus procesos y transformar la manera en que interactúan con la tecnología. Ofrecemos asesoramiento personalizado y herramientas avanzadas para que todos puedan aprovechar el potencial de la IA de manera fácil y accesible.
           </p>
         </div>
   

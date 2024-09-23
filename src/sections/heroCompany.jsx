@@ -5,9 +5,7 @@ const HeroCompany = () => {
         Sobre PIXO
       </h1>
       <p className="text-white text-lg text-center max-w-3xl mb-8">
-        Somos una agencia de publicidad que implementa inteligencia artificial
-        para optimizar tus proyectos. Nuestra misión es garantizar que la
-        inteligencia artificial general te beneficie y maximice tus resultados.
+      Somos una agencia de publicidad que implementa inteligencia artificial para optimizar tus proyectos. Nuestra misión es garantizar que la inteligencia artificial general te beneficie y maximice tus resultados.
       </p>
       <img
         src="/public/Diseño_grafico.jpg"

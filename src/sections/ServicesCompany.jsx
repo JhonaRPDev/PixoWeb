@@ -42,7 +42,7 @@ const ServicesCompany = () => {
         </h1>
         <p className="text-lg text-white max-w-3xl">
           Descubre cómo los servicios de Pixo IA pueden transformar tu negocio
-          con soluciones personalizadas.
+          con soluciones personalizadas
         </p>
       </div>
 

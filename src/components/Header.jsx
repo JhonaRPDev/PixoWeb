@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import NavItem from "../components/navItem";
+import NavItem from "./navItem";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -36,10 +36,13 @@ const Header = () => {
             {isDropdownOpen && (
               <ul className="absolute w-60 top-full bg-black/60 text-white py-2 pr-4 space-y-2 uppercase z-50">
                 <NavItem label="Marketing Digital" to="/services/marketing" />
-                <NavItem label="Desarrollo de Software" to="/services/software" />
+                <NavItem
+                  label="Desarrollo de Software"
+                  to="/services/software"
+                />
                 <NavItem label="Inteligencia Artificial" to="/services/ai" />
-                <NavItem label="Diseño Gráfico" to="/services/diseñoGrafico" />
-                <NavItem label="Páginas Web" to="/services/paginaWeb" />
+                <NavItem label="Diseño Gráfico" to="/services/diseñografico" />
+                <NavItem label="Páginas Web" to="/services/paginaweb" />
               </ul>
             )}
           </div>
@@ -94,10 +97,16 @@ const Header = () => {
               {isMobileDropdownOpen && (
                 <ul className="absolute w-60 bg-black/80 text-white py-2 pr-4 space-y-2 uppercase left-1/2 transform -translate-x-1/2 z-50">
                   <NavItem label="Marketing Digital" to="/services/marketing" />
-                  <NavItem label="Desarrollo de Software" to="/services/software" />
+                  <NavItem
+                    label="Desarrollo de Software"
+                    to="/services/software"
+                  />
                   <NavItem label="Inteligencia Artificial" to="/services/ai" />
-                  <NavItem label="Diseño Gráfico" to="/services/diseñoGrafico" />
-                  <NavItem label="Páginas Web" to="/services/paginaWeb" />
+                  <NavItem
+                    label="Diseño Gráfico"
+                    to="/services/diseñografico"
+                  />
+                  <NavItem label="Páginas Web" to="/services/paginaweb" />
                 </ul>
               )}
             </div>
