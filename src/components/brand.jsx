@@ -1,15 +1,23 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import PropTypes from 'prop-types';
+import gsap from "gsap";
 
 const Brand = ({ images }) => {
+  const brandRef = useRef(null);
+
+  useEffect(() => {
+    const element = brandRef.current;
+    gsap.to(element, {
+      x: "-80%",
+      repeat: -1,
+      duration: 17,
+      ease: "linear",
+    });
+  }, []);
+
   return (
     <div className="overflow-hidden w-full mb-12">
-      <motion.div
-        className="flex"
-        initial={{ x: 0 }}
-        animate={{ x: "-80%" }}
-        transition={{ repeat: Infinity, duration: 17, ease: "linear" }}
-      >
+      <div className="flex" ref={brandRef}>
         {images.map((image, index) => (
           <div className="flex-shrink-0 mx-10" key={index}>
             <img src={image} alt={`brand-${index}`} className="w-20 h-20 object-contain" />
@@ -25,7 +33,7 @@ const Brand = ({ images }) => {
             <img src={image} alt={`brand-${index}-duplicate`} className="w-20 h-20 object-contain" />
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -35,5 +43,3 @@ Brand.propTypes = {
 };
 
 export default Brand;
-
-

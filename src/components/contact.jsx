@@ -1,3 +1,5 @@
+import Button from "./button";
+
 const Contact = () => {
   return (
     <div className="h-auto bg-white flex flex-col items-center justify-center text-center p-6 md:h-[420px]">
@@ -7,9 +9,7 @@ const Contact = () => {
           <br className="hidden md:block" />
           optimiza resultados usando inteligencia artificial
         </h1>
-        <button className="bg-blue-500 px-20 py-2 rounded-full font-semibold text-lg sm:text-xl text-white hover:bg-blue-700 transition-colors duration-300">
-          COTIZA AHORA
-        </button>
+        <Button>COTIZA AHORA</Button>
       </div>
     </div>
   );

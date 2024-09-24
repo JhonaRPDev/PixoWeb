@@ -1,5 +1,5 @@
-import Hero from "../sections/Hero";
 import Brand from "../components/Brand";
+import Hero from "../components/Hero";
 import Services from "../sections/Services";
 
 const images = [

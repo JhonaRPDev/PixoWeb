@@ -3,7 +3,7 @@ import Container from "../components/container";
 
 const Services = () => {
   const location = useLocation();
-  const fullPageRoutes = ["/services/marketing", "/services/software", "/services/ai", "/services/diseñografico", "/services/paginaweb",];
+  const fullPageRoutes = ["/services/marketing", "/services/software", "/services/ai", "/services/disenografico", "/services/paginaweb",];
   const isFullPageRoute = fullPageRoutes.includes(location.pathname);
 
   if (isFullPageRoute) {
@@ -26,7 +26,7 @@ const Services = () => {
                 <Link to="/services/ai" className="text-white hover:text-blue-500"></Link>
               </li>
               <li>
-                <Link to="/services/diseñografico" className="text-white hover:text-blue-500"></Link>
+                <Link to="/services/disenografico" className="text-white hover:text-blue-500"></Link>
               </li>
               <li>
                 <Link to="/services/paginaweb" className="text-white hover:text-blue-500"></Link>

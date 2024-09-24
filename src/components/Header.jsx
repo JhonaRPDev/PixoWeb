@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import NavItem from "./navItem";
+import Button from "./button";
+import Modal from "./form";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false); // Estado separado para el menú desplegable móvil
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
     <header className="fixed top-0 left-0 w-full bg-black/60 z-50">
@@ -24,7 +31,6 @@ const Header = () => {
         {/* Nav items para pantallas grandes */}
         <ul className="hidden md:flex items-center space-x-8 text-white font-bold uppercase">
           <NavItem label="Inicio" to="/" />
-
           {/* Servicios con dropdown en pantallas grandes */}
           <div className="relative">
             <button
@@ -36,28 +42,24 @@ const Header = () => {
             {isDropdownOpen && (
               <ul className="absolute w-60 top-full bg-black/60 text-white py-2 pr-4 space-y-2 uppercase z-50">
                 <NavItem label="Marketing Digital" to="/services/marketing" />
-                <NavItem
-                  label="Desarrollo de Software"
-                  to="/services/software"
-                />
+                <NavItem label="Desarrollo de Software" to="/services/software" />
                 <NavItem label="Inteligencia Artificial" to="/services/ai" />
-                <NavItem label="Diseño Gráfico" to="/services/diseñografico" />
+                <NavItem label="Diseño Gráfico" to="/services/disenografico" />
                 <NavItem label="Páginas Web" to="/services/paginaweb" />
               </ul>
             )}
           </div>
-
           <NavItem label="Compañía" to="/company" />
         </ul>
 
         {/* Botón para pantallas grandes */}
         <div className="hidden md:block">
-          <Link
-            to="/contact"
+          <button
+            onClick={toggleModal} // Llamamos al toggleModal al hacer clic
             className="font-semibold text-white bg-transparent border-2 py-1 px-12 rounded-full hover:bg-blue-500 hover:border-0 transition-all duration-300 ease-in-out transform hover:translate-x-1"
           >
             COTIZA AHORA
-          </Link>
+          </button>
         </div>
 
         {/* Botón menú para dispositivos móviles */}
@@ -97,31 +99,22 @@ const Header = () => {
               {isMobileDropdownOpen && (
                 <ul className="absolute w-60 bg-black/80 text-white py-2 pr-4 space-y-2 uppercase left-1/2 transform -translate-x-1/2 z-50">
                   <NavItem label="Marketing Digital" to="/services/marketing" />
-                  <NavItem
-                    label="Desarrollo de Software"
-                    to="/services/software"
-                  />
+                  <NavItem label="Desarrollo de Software" to="/services/software" />
                   <NavItem label="Inteligencia Artificial" to="/services/ai" />
-                  <NavItem
-                    label="Diseño Gráfico"
-                    to="/services/diseñografico"
-                  />
+                  <NavItem label="Diseño Gráfico" to="/services/disenografico" />
                   <NavItem label="Páginas Web" to="/services/paginaweb" />
                 </ul>
               )}
             </div>
             <NavItem label="Compañía" to="/company" />
-            <Link
-              to="/contact"
-              className="text-lg font-bold text-white bg-transparent border-2 py-2 px-4 rounded-full hover:bg-blue-500 hover:border-0 transition-all duration-300 ease-in-out transform hover:translate-y-1"
-            >
-              COTIZA AHORA
-            </Link>
+            <Button onClick={toggleModal}>COTIZA AHORA</Button>
           </ul>
         )}
+
+        {/* Modal */}
+        <Modal isVisible={isModalOpen} onClose={toggleModal} />
       </nav>
     </header>
   );
 };
-
 export default Header;

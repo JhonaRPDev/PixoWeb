@@ -6,11 +6,11 @@ import Company from "./page/Company";
 import Contact from "./components/contact";
 import Footer from "./components/Footer";
 import Services from "./page/Services";
-import Marketing from "./page/marketing";
-import Software from "./page/software";
-import IAPixo from "./page/IAPixo";
-import DiseñoGrafico from "./page/diseñoGrafico";
-import PaginaWeb from "./page/paginaweb";       
+import Marketing from "./page/pagesPixo/marketing";
+import IAPixo from "./page/pagesPixo/IAPixo";
+import Software from "./page/pagesPixo/software";
+import DisenoGrafico from "./page/pagesPixo/disenoGrafico";
+import PaginaWeb from "./page/pagesPixo/paginaweb";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
               <Route path="marketing" element={<Marketing />} />
               <Route path="software" element={<Software />} />
               <Route path="ai" element={<IAPixo />} />
-              <Route path="diseñografico" element={<DiseñoGrafico />} />
+              <Route path="disenografico" element={<DisenoGrafico />} />
               <Route path="paginaweb" element={<PaginaWeb />} />
             </Route>
           </Routes>
