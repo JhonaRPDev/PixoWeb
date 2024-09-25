@@ -11,6 +11,7 @@ import IAPixo from "./page/pagesPixo/IAPixo";
 import Software from "./page/pagesPixo/software";
 import DisenoGrafico from "./page/pagesPixo/disenoGrafico";
 import PaginaWeb from "./page/pagesPixo/paginaweb";
+import ScrollToTopButton from "./components/ScrollToTopButton"; // Importar el botón
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           </div>
         </main>
         <Footer />
+        <ScrollToTopButton />
       </div>
     </Router>
   );

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import Button from "./button";
 
 const Modal = ({ isVisible, onClose }) => {
   const modalRef = useRef(null);
@@ -8,48 +9,47 @@ const Modal = ({ isVisible, onClose }) => {
 
   useEffect(() => {
     if (isVisible) {
-      // Animación de apertura
       gsap.fromTo(
         modalRef.current,
         { opacity: 0, y: -50 },
         { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }
       );
       gsap.to(backdropRef.current, { opacity: 0.7, duration: 0.5 });
-    } else {
-      // Animación de cierre
-      gsap.to(modalRef.current, {
-        opacity: 0,
-        y: -50,
-        duration: 0.5,
-        ease: "power3.in",
-        onComplete: onClose,
-      });
-      gsap.to(backdropRef.current, { opacity: 0, duration: 0.5 });
     }
-  }, [isVisible, onClose]);
+  }, [isVisible]);
+
+  const handleModalClose = () => {
+    gsap.to(modalRef.current, {
+      opacity: 0,
+      y: -50,
+      duration: 0.5,
+      ease: "power3.in",
+      onComplete: () => {
+        onClose();
+      },
+    });
+    gsap.to(backdropRef.current, { opacity: 0, duration: 0.5 });
+  };
 
   if (!isVisible) return null;
 
   return (
     <>
-      {/* Fondo oscuro */}
       <div
         ref={backdropRef}
-        className="fixed inset-0 bg-black z-40"
+        className="fixed inset-0 bg-black bg-opacity-70 z-40"
         style={{ opacity: 0 }}
-        onClick={onClose}
+        onClick={handleModalClose}
       ></div>
 
-      {/* Modal */}
       <div
         ref={modalRef}
         className="fixed inset-0 z-50 flex items-center justify-center"
       >
         <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-4">
-          {/* Botón de cerrar */}
-          <button className="absolute top-2 right-2" onClick={onClose}>
+          <button className="absolute top-2 right-2" onClick={handleModalClose}>
             <svg
-              className="w-6 h-6 text-gray-500"
+              className="w-8 h-8 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -64,12 +64,14 @@ const Modal = ({ isVisible, onClose }) => {
             </svg>
           </button>
 
-          {/* Formulario */}
           <div className="mt-4">
-            <h2 className="text-center text-2xl font-bold mb-4">Cotiza Ahora</h2>
-            {/* Aquí insertamos el componente del formulario */}
+            <div className="flex justify-center">
+              <img src="/public/logo_pixo.png" className="h-12 w-20" alt="" />
+            </div>
+            <h2 className="text-center text-2xl font-bold mb-4 uppercase">
+              Cotiza Ahora
+            </h2>
             <form>
-              {/* Tu contenido del formulario */}
               <input
                 type="text"
                 placeholder="Nombre"
@@ -80,16 +82,18 @@ const Modal = ({ isVisible, onClose }) => {
                 placeholder="Correo electrónico"
                 className="block w-full p-2 mb-4 border border-gray-300 rounded"
               />
+              <input
+                type="text"
+                placeholder="Número Telefónico"
+                className="block w-full p-2 mb-4 border border-gray-300 rounded"
+              />
               <textarea
                 placeholder="Descripción del proyecto"
                 className="block w-full p-2 mb-4 border border-gray-300 rounded"
               />
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded"
-              >
-                Enviar
-              </button>
+              <div className="flex justify-center">
+                <Button onClick="submit">Enviar</Button>
+              </div>
             </form>
           </div>
         </div>

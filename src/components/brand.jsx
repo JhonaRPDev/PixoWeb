@@ -16,7 +16,7 @@ const Brand = ({ images }) => {
   }, []);
 
   return (
-    <div className="overflow-hidden w-full mb-12">
+    <div className="overflow-hidden w-full py-10 md:py-20">
       <div className="flex" ref={brandRef}>
         {images.map((image, index) => (
           <div className="flex-shrink-0 mx-10" key={index}>

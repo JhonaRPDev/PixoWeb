@@ -27,7 +27,7 @@ const Benefits = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full pb-20" ref={benefitsRef}>
+    <div className="flex flex-col items-center justify-center w-full py-32" ref={benefitsRef}>
       <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-6 sm:mb-8">
         ¿Qué obtienes con el marketing digital de Pixo?
       </h1>

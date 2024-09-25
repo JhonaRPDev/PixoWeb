@@ -1,23 +1,26 @@
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import PropTypes from "prop-types";
+import Button from "./button";
+import Modal from "./modalForm";
 
 const Info = ({ title, description, imageSrc }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
-    <div className="flex flex-col items-center justify-center w-full pb-20">
+    <div className="flex flex-col items-center justify-center w-full py-20">
       <div className="max-w-4xl w-full px-4 sm:px-6 lg:px-8">
         <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-6 sm:mb-8">
           {title}
         </h1>
 
         {description && (
-          <p className="text-white text-lg text-center mb-8">
-            {description}
-          </p>
+          <p className="text-white text-lg text-center mb-8">{description}</p>
         )}
-
         <div className="flex justify-center">
-          <button className="bg-blue-500 text-white font-bold px-8 py-3 rounded-full hover:bg-blue-700 transition-all duration-300">
-            COTIZA AHORA
-          </button>
+          <Button onClick={toggleModal}>COTIZA AHORA</Button>
         </div>
 
         {imageSrc && (
@@ -30,6 +33,7 @@ const Info = ({ title, description, imageSrc }) => {
           </div>
         )}
       </div>
+      {isModalOpen && <Modal isVisible={isModalOpen} onClose={toggleModal} />}
     </div>
   );
 };

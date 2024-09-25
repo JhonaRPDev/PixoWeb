@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="bg-white border-t border-gray-200">
@@ -5,64 +7,63 @@ const Footer = () => {
         <div className="md:flex md:justify-between">
           {/* Sección de PIXO */}
           <div className="mb-6 md:mb-0 md:w-1/3">
-            <img src="/public/logo_pixo.png" alt="" className="h-14" />
+            <Link to="/">
+              <img src="/public/logo_pixo.png" alt="PIXO Logo" className="h-14" />
+            </Link>
             <p className="text-black text-base pr-24 leading-relaxed">
               Transformamos tus ideas en soluciones inteligentes, impulsando tu
               negocio y cuidando tu bienestar.
             </p>
           </div>
 
-          {/* Sección de Compañía y Productos */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-x-20 gap-y-8">
-            {/* Compañía */}
             <div>
               <h2 className="mb-4 text-lg font-semibold text-black uppercase">
                 Compañía
               </h2>
               <ul className="text-black space-y-2">
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link to="/company" className="hover:underline">
                     Sobre Nosotros
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link to="/security" className="hover:underline">
                     Seguridad
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Productos */}
             <div className="mt-8 md:mt-0">
               <h2 className="mb-4 text-lg font-semibold text-black uppercase">
                 Productos
               </h2>
               <ul className="text-black space-y-2">
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link to="/services/ai" className="hover:underline">
                     Inteligencia Artificial PIXO
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link to="/services/marketing" className="hover:underline">
                     Marketing Digital
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link to="/services/software" className="hover:underline">
                     Desarrollo de Software
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link to="/services/paginaweb" className="hover:underline">
                     Páginas Web
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link to="/services/disenografico" className="hover:underline">
                     Diseño Gráfico
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
