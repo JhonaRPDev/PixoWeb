@@ -5,7 +5,6 @@ const Card = ({ image, title, description, className = "", isServices = false })
     <div className={`relative bg-white shadow-md rounded-lg overflow-hidden cursor-pointer 
                      ${className} 
                      ${isServices ? 'group hover:scale-105 transition-transform duration-300' : ''}`}>
-      {/* Imagen de fondo */}
       {image && (
         <div className="absolute inset-0">
           <img
@@ -19,7 +18,6 @@ const Card = ({ image, title, description, className = "", isServices = false })
 
       <div className={`relative p-1 sm:p-4 h-full flex flex-col 
                        ${isServices ? 'justify-center items-center' : 'justify-between'}`}>
-        {/* Título */}
         {title && (
           <h2 className={`sm:text-xl font-bold text-white mb-2 
                           ${isServices ? 'text-center group-hover:scale-110 transition-transform duration-300' : ''}`}>
@@ -27,7 +25,6 @@ const Card = ({ image, title, description, className = "", isServices = false })
           </h2>
         )}
 
-        {/* Descripción (solo para ServicesCompany) */}
         {!isServices && description && (
           <p className="text-white text-xs sm:text-base mt-auto">
             {description}

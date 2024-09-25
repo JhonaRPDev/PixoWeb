@@ -1,5 +1,5 @@
+import AboutCompany from "../components/aboutCompany";
 import Info from "../components/info";
-import AboutCompany from "../sections/aboutCompany";
 import HeroCompany from "../sections/heroCompany";
 import ServicesCompany from "../sections/servicesCompany";
 

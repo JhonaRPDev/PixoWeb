@@ -49,7 +49,7 @@ const ServicesCompany = () => {
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={30}
-        slidesPerView={3} // Valor predeterminado para pantallas grandes
+        slidesPerView={3}
         centeredSlides={true}
         loop={true}
         autoplay={{

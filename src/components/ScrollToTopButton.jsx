@@ -3,7 +3,6 @@ import { FaArrowUp } from "react-icons/fa";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-// Registrar el plugin
 gsap.registerPlugin(ScrollToPlugin);
 
 const ScrollToTopButton = () => {

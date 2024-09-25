@@ -41,7 +41,6 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-black/60 z-50">
       <nav className="container mx-auto flex items-center justify-between px-8 py-4">
-        {/* Logo */}
         <div className="flex items-center">
           <Link to="/">
             <img
@@ -52,10 +51,8 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Nav items para pantallas grandes */}
         <ul className="hidden md:flex items-center space-x-8 text-white font-bold uppercase">
           <NavItem label="Inicio" to="/" />
-          {/* Servicios con dropdown en pantallas grandes */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -76,7 +73,6 @@ const Header = () => {
           <NavItem label="Compañía" to="/company" />
         </ul>
 
-        {/* Botón para pantallas grandes */}
         <div className="hidden md:block">
           <Button
             className="bg-transparent border-2 border-white py-1 px-12 hover:bg-blue-500 hover:border-0"
@@ -86,7 +82,6 @@ const Header = () => {
           </Button>
         </div>
 
-        {/* Botón menú para dispositivos móviles */}
         <div className="md:hidden flex items-center">
           <button
             className="text-white"
@@ -109,7 +104,6 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Menú desplegable para móviles */}
         {isMobileMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-black/60 text-white z-40" ref={mobileMenuRef}>
             <ul className="flex flex-col items-center uppercase">
@@ -147,7 +141,6 @@ const Header = () => {
           </div>
         )}
 
-        {/* Modal */}
         {isModalOpen && <Modal isVisible={isModalOpen} onClose={toggleModal} />}
       </nav>
     </header>

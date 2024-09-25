@@ -22,8 +22,11 @@ const Hero = ({
 
   const titleRef = useRef(null);
   const paragraphRef = useRef(null);
+  const backgroundRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
+    // Animación del título y párrafo
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: titleRef.current,
@@ -48,12 +51,40 @@ const Hero = ({
         "-=0.5"
       );
     }
+
+    if (backgroundRef.current && containerRef.current) {
+      gsap.to(backgroundRef.current, {
+        yPercent: -40,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      gsap.to(backgroundRef.current, {
+        scale: 1.1,
+        rotation: 0.05, 
+        skewX: 0.5,
+        skewY: 0.5,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+    }
   }, [paragraph]);
 
   return (
-    <div className={`relative ${height} w-full overflow-hidden mb-12`}>
+    <div ref={containerRef} className={`relative ${height} w-full overflow-hidden mb-12`}>
       {backgroundType === "video" ? (
         <video
+          ref={backgroundRef}
           src={backgroundSrc}
           autoPlay
           loop
@@ -65,6 +96,7 @@ const Hero = ({
         />
       ) : (
         <img
+          ref={backgroundRef}
           src={backgroundSrc}
           alt="Hero background"
           className="absolute inset-0 w-full h-full object-cover"

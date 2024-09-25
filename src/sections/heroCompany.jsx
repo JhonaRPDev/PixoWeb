@@ -8,7 +8,7 @@ const HeroCompany = () => {
       Somos una agencia de publicidad que implementa inteligencia artificial para optimizar tus proyectos. Nuestra misión es garantizar que la inteligencia artificial general te beneficie y maximice tus resultados.
       </p>
       <img
-        src="/public/Diseño_grafico.jpg"
+        src="/Diseño_grafico.jpg"
         alt="imgRobot"
         className="w-full object-cover max-w-4xl"
       />

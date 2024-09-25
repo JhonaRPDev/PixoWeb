@@ -5,10 +5,9 @@ const Footer = () => {
     <footer className="bg-white border-t border-gray-200">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
-          {/* Sección de PIXO */}
           <div className="mb-6 md:mb-0 md:w-1/3">
             <Link to="/">
-              <img src="/public/logo_pixo.png" alt="PIXO Logo" className="h-14" />
+              <img src="/logo_pixo.png" alt="PIXO Logo" className="h-14" />
             </Link>
             <p className="text-black text-base pr-24 leading-relaxed">
               Transformamos tus ideas en soluciones inteligentes, impulsando tu
@@ -28,7 +27,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/security" className="hover:underline">
+                  <Link to="" className="hover:underline">
                     Seguridad
                   </Link>
                 </li>
@@ -70,13 +69,11 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Línea divisoria */}
         <hr className="my-6 border-gray-300 sm:mx-auto lg:my-8" />
 
-        {/* Sección de Derechos de Autor */}
         <div className="sm:flex sm:items-center sm:justify-center">
           <span className="text-sm font-semibold text-black sm:text-center">
-            PIXO Company 2023 - 2024
+             PIXO Company <span className="text-lg align-super">&reg;</span> 2023 - 2024
           </span>
         </div>
       </div>
