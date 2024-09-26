@@ -2,7 +2,7 @@
 
 Este repositorio contiene el código fuente de una página web orientada a ofrecer servicios de desarrollo de software y soluciones tecnológicas. La aplicación está construida utilizando tecnologías modernas y mejores prácticas de desarrollo para garantizar rendimiento, escalabilidad y una experiencia de usuario optimizada.
 
-[![260-1x-shots-so.jpg](https://i.postimg.cc/VNZFnVnS/260-1x-shots-so.jpg)](https://postimg.cc/7C77yXBD)
+![](https://github.com/JhonaRPDev/PixoWeb/blob/main/260_1x_shots_so.jpeg)
 
 <h2>Tecnologías Utilizadas</h2>
 Frontend:
